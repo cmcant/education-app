@@ -1,0 +1,36 @@
+<div class='blue-grey'><H3>Upload de Arquivos Siga</H3></div>
+
+
+<div *ngIf="upload==1">
+     <strong>Sucesso!</strong> Upload do Aquivo <a href="#" >realizado com sucesso.</a>.
+</div>
+
+<form action="#">
+    <div class="file-field input-field ">
+      <div class="btn blue-grey">
+        <span>File</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+  </form>
+
+<br><button type="button"  class="btn waves-effect waves-light blue-grey" (click)="UploadFileSiga()">Confirmar Upload</button>
+<br>
+<br>
+<br>
+<br>
+<div class="preloader-wrapper big active" *ngIf="upload==-1">
+  <div class="spinner-layer spinner-blue-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div><div class="gap-patch">
+      <div class="circle"></div>
+    </div><div class="circle-clipper right">
+      <div class="circle"></div>
+    </div>
+  </div>
+
+</div>

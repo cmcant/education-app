@@ -1,0 +1,66 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+
+<script>
+    $(".dropdown-button").dropdown();
+</script>
+
+ <!-- Dropdown Structure -->
+ <ul id="dropdown1" class="dropdown-content">
+   <li><a routerLink="/curso">Cursos</a></li>
+   <li><a routerLink="/aluno">Alunos</a></li>
+   <li class="divider"></li>
+   <li><a routerLink="/professor">Professores</a></li>
+ </ul>
+ <nav class='blue-grey'>
+   <div class="nav-wrapper">
+
+     <a href="#!" class="brand-logo"><img width="250" alt="Active Soft Logo" src="../assets/logo.png"></a>
+     <ul class="left hide-on-med-and-down">
+       <li><a href="#!">Home</a></li>
+       <li><a routerLink="/sobre">Sobre</a></li>
+       <!-- Dropdown Trigger -->
+       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">dehaze</i></a></li>
+     </ul>
+   </div>
+
+ </nav>
+ <br>
+<img width="300" alt="Google Logo" src="../assets/google.png">
+ <router-outlet></router-outlet>
+
+<div *ngIf="lgn==0">
+ <div class="row">
+     <form class="col s12">
+       <div class="row">
+         <div class="input-field col s12">
+           <input id="idclient" type="text" class="validate">
+           <label for="idclient" data-error="wrong" data-success="right">ID Client</label>
+         </div>
+       </div>
+       <div class="row">
+         <div class="input-field col s12">
+           <input id="keyapi" type="text" class="validate">
+           <label for="keyapi" data-error="wrong" data-success="right">Key API</label>
+         </div>
+       </div>
+
+
+       <a class="waves-effect waves-light btn blue-grey" (click)="login()">Entrar</a>
+     </form>
+   </div>
+</div>
+ <div class="fixed-action-btn toolbar">
+     <a class="btn-floating btn-large blue-grey">
+       <i class="large material-icons">menu</i>
+     </a>
+     <ul>
+       <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">insert_chart</i></a></li>
+       <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_quote</i></a></li>
+       <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">publish</i></a></li>
+       <li class="waves-effect waves-light"><a routerLink="/upload"><i class="material-icons">attach_file</i></a></li>
+     </ul>
+   </div>
+
+
+</div>
