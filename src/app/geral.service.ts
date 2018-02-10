@@ -24,11 +24,13 @@ public UploadFileSiga(){
   return 1
 }
 
-public AuthClient(client_id){
-  
-  let url = 'https://www.googleapis.com/auth/classroom.courses';
+public AuthClient(){
+
+  let urlget = 'https://classroom.googleapis.com/v1/courses';
   return new Promise(resolve => {      
-    this.http.get( url )
+    this.http.get( urlget, {
+      headers: {'Authorization': 'Bearer ya29.GlteBQ6_YPASKOj-6a_x2VGnVe0YlN3W81l9xdPOfDP3T7OFwQZ9vvLjCbQarmnmlTc7NxAi8KNIGk5XjnhZERDDBws0MH9DX9BSP77VekkBaYcN52C3otGyaP2H'}
+    })
       .subscribe(data => {
           resolve(data);
           console.log(data);

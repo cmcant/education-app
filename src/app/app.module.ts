@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {AuthConfig, JwksValidationHandler, OAuthModule, ValidationHandler} from 'angular-oauth2-oidc';
 
 //prividers
 import { GeralService } from './geral.service';
@@ -14,6 +15,9 @@ import { AlunoComponent } from './aluno/aluno.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { UtilitarioComponent } from './utilitario/utilitario.component';
 import { UploadfilesigaComponent } from './uploadfilesiga/uploadfilesiga.component';
+import { authConfig } from './auth.config';
+import {BASE_URL} from './app.tokens';
+
 
 // Rotas
 const appRoutes: Routes = [
@@ -46,11 +50,13 @@ const appRoutes: Routes = [
     UploadfilesigaComponent
   ],
   imports: [
-  	RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes),
+    OAuthModule.forRoot(),
     BrowserModule,
     HttpClientModule,
   ],
-  providers: [GeralService],
+  providers: [GeralService,
+              { provide: BASE_URL, useValue: "http://www.angular.at" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
